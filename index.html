@@ -224,31 +224,28 @@ setInterval(showNotification,8000);
 
 // DYNAMIC COUNTER
 
-let active=120+Math.floor(Math.random()*20);
-let profiles=30+Math.floor(Math.random()*10);
-let online=15+Math.floor(Math.random()*10);
+let active = 120 + Math.floor(Math.random()*20)
+let profiles = 30 + Math.floor(Math.random()*10)
+let online = 15 + Math.floor(Math.random()*10)
 
 function updateStats(){
 
-const activeEl=document.getElementById("active-members");
-const profilesEl=document.getElementById("new-profiles");
-const onlineEl=document.getElementById("online-now");
+active += Math.floor(Math.random()*3)-1
+profiles += Math.floor(Math.random()*2)
+online += Math.floor(Math.random()*3)-1
 
-if(!activeEl || !profilesEl || !onlineEl) return;
+document.getElementById("active-members").innerText =
+active + " użytkowników aktywnych dziś"
 
-active+=Math.floor(Math.random()*3)-1;
-profiles+=Math.floor(Math.random()*2);
-online+=Math.floor(Math.random()*3)-1;
+document.getElementById("new-profiles").innerText =
+profiles + " nowe profile dziś"
 
-activeEl.innerText=active+" użytkowników aktywnych dziś";
-profilesEl.innerText=profiles+" nowe profile dziś";
-onlineEl.innerText=online+" osób online";
+document.getElementById("online-now").innerText =
+online + " osób online"
 
 }
 
-updateStats();
-setInterval(updateStats,7000);
-
+setInterval(updateStats,6000)
 
 // CARD REVEAL
 
