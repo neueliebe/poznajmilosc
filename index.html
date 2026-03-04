@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nowa miłość zaczyna się dziś | Poznaj nowych ludzi</title>
+<meta name="description" content="Poznaj nowych ludzi i odkryj miłość w swojej okolicy. Dyskretnie, wygodnie i bez zobowiązań.">
+
+<meta property="og:title" content="Nowa miłość zaczyna się dziś">
+<meta property="og:description" content="Poznaj interesujące osoby w swojej okolicy.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/IMAGE1.jpg">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="live-notification"></div>
+
+<script>
+
+const users = [
+"Anna (39) z Warszawy jest teraz online",
+"Kasia (42) z Krakowa utworzyła nowy profil",
+"Magda (36) z Wrocławia szuka nowych znajomości",
+"Ola (44) z Gdańska jest teraz aktywna",
+"Monika (41) z Poznania właśnie się zarejestrowała"
+];
+
+function showNotification(){
+
+const el = document.getElementById("live-notification");
+
+el.innerText = users[Math.floor(Math.random()*users.length)];
+
+el.style.opacity = "1";
+
+setTimeout(()=>{
+
+el.style.opacity = "0";
+
+},4000);
+
+}
+
+showNotification();
+setInterval(showNotification,8000);
+
+</script>
+
+<div class="hero-bg"></div>
+
+<div class="container">
+
+<header class="hero">
+
+<div class="activity-bar">
+
+<span id="active-members">
+128 użytkowników aktywnych dziś
+</span>
+
+<span id="new-profiles">
+34 nowe profile dziś
+</span>
+
+<span id="online-now">
+19 osób online
+</span>
+
+</div>
+
+<h1>Nowa miłość zaczyna się dziś</h1>
+
+<p>Poznaj nowych ludzi i znajdź miłość w swojej okolicy.</p>
+
+<a href="https://go.cm-trk6.com/aff_f?h=rA47F6&aff_sub5=free-social" class="btn main-btn">
+Zobacz profile
+</a>
+
+</header>
+
+<section class="profiles">
+
+<a href="https://go.cm-trk6.com/aff_f?h=rA47F6&aff_sub5=free-social" class="card-link">
+<div class="card">
+<img src="images/IMAGE1.jpg">
+<div class="card-content">
+<h3>Kasia, 37</h3>
+<p>Warszawa</p>
+<span class="online">Online</span>
+<div class="glass-btn">Zobacz profil</div>
+</div>
+</div>
+</a>
+
+<a href="https://go.cm-trk6.com/aff_f?h=rA47F6&aff_sub5=free-social" class="card-link">
+<div class="card">
+<img src="images/IMAGE2.jpg">
+<div class="card-content">
+<h3>Magda, 41</h3>
+<p>Kraków</p>
+<span class="online">Online</span>
+<div class="glass-btn">Zobacz profil</div>
+</div>
+</div>
+</a>
+
+<a href="https://go.cm-trk6.com/aff_f?h=rA47F6&aff_sub5=free-social" class="card-link">
+<div class="card">
+<img src="images/IMAGE3.jpg">
+<div class="card-content">
+<h3>Ola, 39</h3>
+<p>Wrocław</p>
+<span class="online">Online</span>
+<div class="glass-btn">Zobacz profil</div>
+</div>
+</div>
+</a>
+
+<a href="https://go.cm-trk6.com/aff_f?h=rA47F6&aff_sub5=free-social" class="card-link">
+<div class="card">
+<img src="images/IMAGE4.jpg">
+<div class="card-content">
+<h3>Ania, 43</h3>
+<p>Gdańsk</p>
+<span class="online">Online</span>
+<div class="glass-btn">Zobacz profil</div>
+</div>
+</div>
+</a>
+
+<a href="https://go.cm-trk6.com/aff_f?h=rA47F6&aff_sub5=free-social" class="card-link">
+<div class="card">
+<img src="images/IMAGE5.jpg">
+<div class="card-content">
+<h3>Monika, 44</h3>
+<p>Poznań</p>
+<span class="online">Online</span>
+<div class="glass-btn">Zobacz profil</div>
+</div>
+</div>
+</a>
+
+<a href="https://go.cm-trk6.com/aff_f?h=rA47F6&aff_sub5=free-social" class="card-link">
+<div class="card">
+<img src="images/IMAGE6.jpg">
+<div class="card-content">
+<h3>Ewa, 48</h3>
+<p>Łódź</p>
+<span class="online">Online</span>
+<div class="glass-btn">Zobacz profil</div>
+</div>
+</div>
+</a>
+
+<a href="https://go.cm-trk6.com/aff_f?h=rA47F6&aff_sub5=free-social" class="card-link">
+<div class="card">
+<img src="images/IMAGE7.jpg">
+<div class="card-content">
+<h3>Karolina, 41</h3>
+<p>Szczecin</p>
+<span class="online">Online</span>
+<div class="glass-btn">Zobacz profil</div>
+</div>
+</div>
+</a>
+
+<a href="https://go.cm-trk6.com/aff_f?h=rA47F6&aff_sub5=free-social" class="card-link">
+<div class="card">
+<img src="images/IMAGE8.jpg">
+<div class="card-content">
+<h3>Agnieszka, 46</h3>
+<p>Katowice</p>
+<span class="online">Online</span>
+<div class="glass-btn">Zobacz profil</div>
+</div>
+</div>
+</a>
+
+</section>
+
+<section class="more-profiles">
+<a href="https://go.cm-trk6.com/aff_f?h=rA47F6&aff_sub5=free-social" class="btn secondary-btn">
+Zobacz więcej profili
+</a>
+</section>
+
+<section class="testimonials">
+
+<h2>Opinie użytkowników</h2>
+
+<div class="testimonial-card">
+<p>„Poznałam tu naprawdę interesujących ludzi.”</p>
+<span>– Marta, 42</span>
+</div>
+
+<div class="testimonial-card">
+<p>„Bardzo przyjemna atmosfera i ciekawe znajomości.”</p>
+<span>– Piotr, 47</span>
+</div>
+
+</section>
+
+<div class="trust-line">
+✔ Ochrona danych • ✔ Bezpieczne połączenie • ✔ Dyskretnie
+</div>
+
+<footer class="footer">
+<p>© 2026 NowaMiłość</p>
+</footer>
+
+</div>
+
+</body>
+</html>
