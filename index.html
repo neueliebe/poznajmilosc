@@ -10,6 +10,7 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -63,13 +64,11 @@ Zobacz więcej profili
 
 document.addEventListener("DOMContentLoaded", function(){
 
-const OFFER_URL="https://go.cm-trk6.com/aff_f?h=rA47F6&aff_sub5=free-social";
+const OFFER_URL="ВСТАВЬ_ТУТ_СВОЙ_ОФЕР";
 
-// ---------- DEVICE DETECT ----------
+// DEVICE
 
 const isiOS=/iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-// ---------- CLICK HANDLER ----------
 
 document.querySelectorAll(".go-offer").forEach(el=>{
 
@@ -87,7 +86,7 @@ window.location.href=OFFER_URL;
 
 });
 
-// ---------- DATA ----------
+// DATA
 
 const names=[
 "Kasia","Magda","Ola","Ania","Monika","Ewa","Karolina","Agnieszka",
@@ -104,7 +103,10 @@ const ages=[35,36,37,38,39,40,41,42,43,44,45,46,47,48,49];
 const cities=[
 "Warszawa","Kraków","Wrocław","Gdańsk","Poznań","Łódź",
 "Szczecin","Katowice","Lublin","Białystok","Gdynia",
-"Radom","Rzeszów","Olsztyn","Toruń"
+"Radom","Rzeszów","Olsztyn","Toruń","Opole","Kielce",
+"Bydgoszcz","Zielona Góra","Częstochowa","Gliwice",
+"Zabrze","Bytom","Sosnowiec","Tychy","Płock",
+"Elbląg","Koszalin","Legnica","Kalisz","Słupsk"
 ];
 
 const statuses=[
@@ -117,8 +119,7 @@ const statuses=[
 let usedPhotos=[];
 let usedNames=[];
 let usedAges=[];
-
-// ---------- RANDOM PROFILES ----------
+let usedCities=[];
 
 document.querySelectorAll(".card").forEach(card=>{
 
@@ -156,15 +157,24 @@ while(usedAges.includes(age));
 
 usedAges.push(age);
 
+let city;
+
+do{
+city=cities[Math.floor(Math.random()*cities.length)];
+}
+while(usedCities.includes(city));
+
+usedCities.push(city);
+
 nameEl.innerText=name+", "+age;
 
-cityEl.innerText=cities[Math.floor(Math.random()*cities.length)];
+cityEl.innerText=city;
 
 statusEl.innerText=statuses[Math.floor(Math.random()*statuses.length)];
 
 });
 
-// ---------- SHUFFLE CARDS ----------
+// SHUFFLE
 
 const container=document.querySelector(".profiles");
 const cards=Array.from(container.children);
@@ -172,7 +182,7 @@ const cards=Array.from(container.children);
 cards.sort(()=>Math.random()-0.5);
 cards.forEach(card=>container.appendChild(card));
 
-// ---------- REVEAL ----------
+// REVEAL
 
 setTimeout(()=>{
 
