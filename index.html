@@ -2,33 +2,36 @@
 
 <html lang="pl">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nowa miłość zaczyna się dziś</title>
+<title>Nowa miłość zaczyna się dziś | Poznaj nowych ludzi</title>
 
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
+<div id="live-notification"></div>
 <div class="hero-bg"></div>
 
 <div class="container">
 
 <header class="hero">
 
-<h1>Nowa miłość zaczyna się dziś</h1>
+<div class="activity-bar">
+<span id="active-members">128 użytkowników aktywnych dziś</span>
+<span id="new-profiles">34 nowe profile dziś</span>
+<span id="online-now">19 osób online</span>
+</div>
 
+<h1>Nowa miłość zaczyna się dziś</h1>
 <p>Poznaj nowych ludzi i znajdź miłość w swojej okolicy.</p>
 
-<a href="open.html" class="btn main-btn">
+<a href="#" class="btn main-btn go-offer">
 Zobacz profile
 </a>
 
@@ -36,29 +39,55 @@ Zobacz profile
 
 <section class="profiles">
 
-<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
-
-<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
-
-<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
-
-<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
-
-<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
-
-<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
-
-<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
-
-<a href="open.html" class="card-link"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
+<a href="#" class="card-link go-offer"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a> <a href="#" class="card-link go-offer"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a> <a href="#" class="card-link go-offer"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a> <a href="#" class="card-link go-offer"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a> <a href="#" class="card-link go-offer"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a> <a href="#" class="card-link go-offer"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a> <a href="#" class="card-link go-offer"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a> <a href="#" class="card-link go-offer"><div class="card"><img><div class="card-content"><h3></h3><p></p><span class="online"></span><div class="glass-btn">Zobacz profil</div></div></div></a>
 
 </section>
+
+<section class="more-profiles">
+<a href="#" class="btn secondary-btn go-offer">
+Zobacz więcej profili
+</a>
+</section>
+
+<div class="trust-line">
+✔ Ochrona danych • ✔ Bezpieczne połączenie • ✔ Dyskretnie
+</div>
+
+<footer class="footer">
+<p>© 2026 NowaMiłość</p>
+</footer>
 
 </div>
 
 <script>
 
-document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("DOMContentLoaded", function(){
+
+const OFFER_URL="ВСТАВЬ_ТУТ_СВОЙ_ОФЕР";
+
+// ---------- DEVICE DETECT ----------
+
+const isiOS=/iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+// ---------- CLICK HANDLER ----------
+
+document.querySelectorAll(".go-offer").forEach(el=>{
+
+el.addEventListener("click",function(e){
+
+e.preventDefault();
+
+if(isiOS){
+window.location.href="open.html";
+}else{
+window.location.href=OFFER_URL;
+}
+
+});
+
+});
+
+// ---------- DATA ----------
 
 const names=[
 "Kasia","Magda","Ola","Ania","Monika","Ewa","Karolina","Agnieszka",
@@ -70,9 +99,7 @@ const names=[
 "Zofia","Danuta","Bożena","Lucyna","Małgorzata","Ewelina"
 ];
 
-const ages=[
-35,36,37,38,39,40,41,42,43,44,45,46,47,48,49
-];
+const ages=[35,36,37,38,39,40,41,42,43,44,45,46,47,48,49];
 
 const cities=[
 "Warszawa","Kraków","Wrocław","Gdańsk","Poznań","Łódź",
@@ -90,6 +117,8 @@ const statuses=[
 let usedPhotos=[];
 let usedNames=[];
 let usedAges=[];
+
+// ---------- RANDOM PROFILES ----------
 
 document.querySelectorAll(".card").forEach(card=>{
 
@@ -135,11 +164,15 @@ statusEl.innerText=statuses[Math.floor(Math.random()*statuses.length)];
 
 });
 
+// ---------- SHUFFLE CARDS ----------
+
 const container=document.querySelector(".profiles");
 const cards=Array.from(container.children);
 
 cards.sort(()=>Math.random()-0.5);
 cards.forEach(card=>container.appendChild(card));
+
+// ---------- REVEAL ----------
 
 setTimeout(()=>{
 
