@@ -10,6 +10,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -69,10 +70,16 @@ Zobacz więcej profili
 
 document.addEventListener("DOMContentLoaded", function(){
 
+// ---------- DATA ----------
+
 const names=[
 "Kasia","Magda","Ola","Ania","Monika","Ewa","Karolina","Agnieszka",
 "Marta","Natalia","Joanna","Paulina","Sylwia","Patrycja","Dominika",
-"Klaudia","Iwona","Renata","Barbara","Dorota","Beata","Justyna"
+"Klaudia","Iwona","Renata","Barbara","Dorota","Beata","Justyna",
+"Anna","Aleksandra","Emilia","Weronika","Martyna","Kamila",
+"Magdalena","Izabela","Daria","Elżbieta","Halina","Krystyna",
+"Sabina","Ilona","Jolanta","Grażyna","Lidia","Teresa",
+"Zofia","Danuta","Bożena","Lucyna","Małgorzata","Ewelina"
 ];
 
 const cities=[
@@ -89,8 +96,9 @@ const statuses=[
 ];
 
 let usedPhotos=[];
+let usedNames=[];
 
-// RANDOM PROFILES
+// ---------- RANDOM PROFILES ----------
 
 document.querySelectorAll(".card").forEach(card=>{
 
@@ -98,6 +106,8 @@ const img=card.querySelector("img");
 const nameEl=card.querySelector("h3");
 const cityEl=card.querySelector("p");
 const statusEl=card.querySelector(".online");
+
+// unique photo
 
 let photo;
 
@@ -110,18 +120,34 @@ usedPhotos.push(photo);
 
 img.src="images/IMAGE"+photo+".webp";
 
-let name=names[Math.floor(Math.random()*names.length)];
+// unique name
+
+let name;
+
+do{
+name=names[Math.floor(Math.random()*names.length)];
+}
+while(usedNames.includes(name));
+
+usedNames.push(name);
+
+// age
+
 let age=35+Math.floor(Math.random()*15);
 
 nameEl.innerText=name+", "+age;
 
+// city
+
 cityEl.innerText=cities[Math.floor(Math.random()*cities.length)];
+
+// status
 
 statusEl.innerText=statuses[Math.floor(Math.random()*statuses.length)];
 
 });
 
-// SHUFFLE CARDS
+// ---------- SHUFFLE CARDS ----------
 
 const container=document.querySelector(".profiles");
 const cards=Array.from(container.children);
@@ -129,7 +155,7 @@ const cards=Array.from(container.children);
 cards.sort(()=>Math.random()-0.5);
 cards.forEach(card=>container.appendChild(card));
 
-// REVEAL ANIMATION
+// ---------- REVEAL ANIMATION ----------
 
 setTimeout(()=>{
 
